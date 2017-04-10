@@ -3,4 +3,7 @@
 
 students = ["Heather", "Niesha","Demetri", "Jelani", "Sean", "Finn"]
 
+#permanently reorders the student array
+students.shuffle! 
+
 puts students
