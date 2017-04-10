@@ -44,6 +44,7 @@
 puts "Please enter your name, and pass to the next person." 
 puts "If you are the last person, type 'done' after your name."
 
+#Initialize an empty array and variable to take in user input
 students = []
 user_input = ""
 
@@ -55,12 +56,9 @@ until user_input == "Done"
 end	
 
 
-
 #permanently reorders the student array
 students.shuffle! 
 
-
-puts students
 
 #Counts number of students the array
 count = 0
@@ -69,7 +67,11 @@ num_students = students.length
 
 until count == num_students
 
-	if num_students % 2 == 1
+	if num_students == 1
+		puts "#{students[count]} is the only student in class."
+		break
+
+	elsif num_students % 2 == 1
 		if count < num_students - 3
 	    # output pairs of students
 	    puts "#{students[count]} & #{students[count+1]}"
@@ -83,7 +85,10 @@ until count == num_students
 		
 
 	end
-	count +=2
+
+	if num_students != 1
+		count +=2
+	end	
 
 end
 
